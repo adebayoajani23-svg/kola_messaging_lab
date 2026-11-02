@@ -1,0 +1,17 @@
+name = "kola-digital-ng"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+# Serve the site and API from the same Worker.
+[assets]
+directory = "."
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[kv_namespaces]]
+binding = "KOLA_DATA"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+[vars]
+GEMINI_MODEL = "gemini-2.5-flash"
+ALLOWED_ORIGIN = "https://k-digital-ng.successphu.workers.dev"
